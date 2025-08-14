@@ -6,7 +6,7 @@ namespace customizeSpritesExtensionUtil {
      */
 
     //% blockId=spriteextensionutilcreate block="create %img=screen_image_picker %kind=spritekind"
-    //% blockSetVariable=mySprite
+    //% blockSetVariable=mySprite weight=100
     export function create(img: Image, kind: number) {
         let sprite = new Sprite(img); // semicolon optional here but added for clarity
         sprites.create(img);          // semicolon optional but clearer
@@ -16,6 +16,7 @@ namespace customizeSpritesExtensionUtil {
 
     // Function to get all sprites of a kind 
     //% blockId="spriteextensionutilallofkind" block="all of kind %kind"
+    //% weight=99
     export function allOfKind(kind: number): Sprite[] {
         const spritesByKind = game.currentScene().spritesByKind; // semicolon recommended for safety
         if (!(kind >= 0) || !spritesByKind[kind]) return [];
